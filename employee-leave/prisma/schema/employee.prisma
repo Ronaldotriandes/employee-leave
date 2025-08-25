@@ -1,0 +1,15 @@
+model Employee {
+  id           String   @id @default(cuid())
+  namaDepan    String
+  namaBelakang String
+  email        String   @unique
+  noHp         String
+  alamat       String
+  jenisKelamin Gender
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  leaves Leave[]
+
+  @@map("employees")
+}
